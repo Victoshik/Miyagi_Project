@@ -1,0 +1,15 @@
+{% extends 'miyagi_app/base.html' %}
+
+{% block content %}
+
+    <ul>
+        <h2><p>{{ songs.song_name }}</p></h2>
+        <p>{{ songs.year}}</p>
+        <p>{{ songs.text|linebreaks }}</p>
+
+
+
+    </ul>
+
+
+{% endblock content %}

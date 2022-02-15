@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+	<link type="text/css" href="{% static 'css/base.css' %}" rel="stylesheet" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="{% static 'img/unnamed (2).jpg' %}" type="image/x-icon"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<table class="table-page" border=0 cellpadding="0" cellspacing="0">
+<tr><td valign=top>
+{% block mainmenu %}
+		<div class="header">
+			<ul id="mainmenu" class="mainmenu">
+			<li class="logo"><img src="{% static 'img/unnamed (2).jpg' %}" width="60" height="60"><div class="logo"></div></img></li>
+{% for m in menu %}
+
+			<li><a href="{% url m.url %}">{{m.title}}</a></li>
+
+{% endfor %}
+			</ul>
+			<div class="clear"></div>
+		</div>
+{% endblock mainmenu %}
+	<img src="{% static 'img/_2_.png' %}" width="500" height="500" align = right>
+
+{% block content %}
+	{% endblock content %}
+</body>
+</html>

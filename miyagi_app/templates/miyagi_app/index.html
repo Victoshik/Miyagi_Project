@@ -1,0 +1,13 @@
+{% extends 'miyagi_app/base.html' %}
+
+
+{% block content %}
+<h1>{{title}}</h1>
+{% for i in concert %}
+<h2>{{i}}</h2>
+<h3>{{i.date}}</h3>
+<h3>{{i.price}}</h3>
+<hr>
+{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'miyagi_app/base.html' %}
+
+{% block content %}
+
+
+{% for i in album %}
+{% if i.pk == al_selected %}
+<h3>{{ i }}</h3>
+{% else %}
+<a href="{{ i.get_absolute_url }}"><h3>{{ i }}</h3></a>
+{% endif %}
+{% endfor %}
+{% endblock content %}

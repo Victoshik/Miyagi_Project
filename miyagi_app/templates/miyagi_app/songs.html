@@ -1,0 +1,15 @@
+{% extends 'miyagi_app/base.html' %}
+
+{% block content %}
+
+{% for i in songs %}
+    <ul>
+        <h2><p>{{ i.song_name }}</p></h2>
+        <p>{{ i.year }}</p>
+        <p>{{ i.text|linebreaks|truncatechars:200 }}</p>
+        <p>{{ i.mp3 }}</p>
+        <p class="link-read-post"><a href="{{ i.get_absolute_url }}">Полный текст</a></p>
+    </ul>
+{% endfor %}
+
+{% endblock content %}
